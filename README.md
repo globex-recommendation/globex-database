@@ -1,0 +1,1 @@
+Container image definitions for the PostgreSQL database of the inventory and catalog services.
