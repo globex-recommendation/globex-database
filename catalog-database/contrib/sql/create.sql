@@ -19,7 +19,7 @@ CREATE TABLE public.catalog (
     description text,
     image character varying(255),
     category character varying(255),
-    price double precision
+    price numeric(12,2)
 );
 
 
