@@ -39,6 +39,19 @@ CREATE TABLE public.category (
 ALTER TABLE public.category OWNER TO $POSTGRESQL_USER;
 
 --
+-- TOC entry 204 (class 1259 OID 16411)
+-- Name: featured_products; Type: TABLE; Schema: public; Owner: $POSTGRESQL_USER
+--
+
+CREATE TABLE public.featured_products (
+    category character varying(255) NOT NULL,
+    items text
+);
+
+
+ALTER TABLE public.featured_products OWNER TO $POSTGRESQL_USER;
+
+--
 -- TOC entry 2821 (class 2606 OID 16393)
 -- Name: catalog catalog_pkey; Type: CONSTRAINT; Schema: public; Owner: $POSTGRESQL_USER
 --
@@ -54,6 +67,15 @@ ALTER TABLE ONLY public.catalog
 
 ALTER TABLE ONLY public.category
     ADD CONSTRAINT category_pkey PRIMARY KEY (category_id);
+
+
+--
+-- TOC entry 2823 (class 2606 OID 16418)
+-- Name: featured_products featured_products_pkey; Type: CONSTRAINT; Schema: public; Owner: catalog
+--
+
+ALTER TABLE ONLY public.featured_products
+    ADD CONSTRAINT featured_products_pkey PRIMARY KEY (category);
 
 
 --
